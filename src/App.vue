@@ -1,65 +1,65 @@
 <template>
 	<div id="app">
-		<h1>Registrar Reclamação</h1>
+		<h1>Register Complaint</h1>
 		<div class="conteudo">
 			<form class="painel">
-				<div class="cabecalho">Formulário</div>
+				<div class="cabecalho">Form</div>
 				<Rotulo nome="E-mail">
-					<input type="text">
+					<input type="text" v-model="user.email">
 				</Rotulo>
-				<Rotulo nome="Senha">
-					<input type="password">
+				<Rotulo nome="Password">
+					<input type="password" v-model="user.password">
 				</Rotulo>
-				<Rotulo nome="Idade">
-					<input type="number">
+				<Rotulo nome="Age">
+					<input type="number" v-model="user.age" min="18" max="115">
 				</Rotulo>
-				<Rotulo nome="Mensagem">
-					<textarea name="" cols="30" rows="5"></textarea>
+				<Rotulo nome="Message">
+					<textarea name="" cols="30" rows="5" v-model="message"></textarea>
 				</Rotulo>
-				<Rotulo nome="Características do Problema">
-					<span class="mr-4"><input type="checkbox" value="reproduzivel"> Reproduzível</span>
-					<span><input type="checkbox" value="intermitente"> Intermitente</span>
+				<Rotulo nome="Problem Features">
+					<span class="mr-4"><input type="checkbox" value="reproduzivel"> Reproducible</span>
+					<span><input type="checkbox" value="intermitente"> Intermittent</span>
 				</Rotulo>
-				<Rotulo nome="Qual produto?">
+				<Rotulo nome="Which product?">
 					<span class="mr-4"><input type="radio"> Web</span>
 					<span class="mr-4"><input type="radio"> Mobile</span>
-					<span><input type="radio"> Outro</span>
+					<span><input type="radio"> Other</span>
 				</Rotulo>
-				<Rotulo nome="Prioridade">
+				<Rotulo nome="Priority">
 					<select name="" id="">
 						<option></option>
 					</select>
 				</Rotulo>
-				<Rotulo nome="Primeira Reclamação?">
+				<Rotulo nome="First complaint?">
 					<Escolha />
 				</Rotulo>
 				<hr>
-				<button>Enviar</button>
+				<button>Send</button>
 			</form>
 			<div class="painel">
-				<div class="cabecalho">Resultado</div>
+				<div class="cabecalho">Result</div>
 				<Rotulo nome="E-mail">
+					<span>{{user.email}}</span>
+				</Rotulo>
+				<Rotulo nome="Password">
+					<span>{{user.password}}</span>
+				</Rotulo>
+				<Rotulo nome="Age">
+					<span>{{user.age}}</span>
+				</Rotulo>
+				<Rotulo nome="Message">
+					<span>{{message}}</span>
+				</Rotulo>
+				<Rotulo nome="Check Options">
 					<span>???</span>
 				</Rotulo>
-				<Rotulo nome="Senha">
+				<Rotulo nome="Which product?">
 					<span>???</span>
 				</Rotulo>
-				<Rotulo nome="Idade">
+				<Rotulo nome="Priority">
 					<span>???</span>
 				</Rotulo>
-				<Rotulo nome="Mensagem">
-					<span>???</span>
-				</Rotulo>
-				<Rotulo nome="Marque as Opções">
-					<span>???</span>
-				</Rotulo>
-				<Rotulo nome="Qual produto?">
-					<span>???</span>
-				</Rotulo>
-				<Rotulo nome="Prioridade">
-					<span>???</span>
-				</Rotulo>
-				<Rotulo nome="Primeira Reclamação?">
+				<Rotulo nome="First complaint?">
 					<span>???</span>
 				</Rotulo>
 			</div>
@@ -73,7 +73,17 @@ import Escolha from './components/Escolha.vue'
 
 export default {
 	name: 'app',
-	components: { Rotulo, Escolha }
+	components: { Rotulo, Escolha },
+	data(){
+		return {
+			user: {
+				email: '',
+				password: '',
+				age: 18,
+			},
+			message: ''
+		}
+	}
 }
 </script>
 

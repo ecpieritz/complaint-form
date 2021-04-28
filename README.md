@@ -2,7 +2,7 @@
 
 ## 🖥 Preview
 <p align = "center">
-   Preview will still be placed.  
+   <img src = "https://github.com/ecpieritz/complaint-form/blob/main/public/img/form-print.png?raw=true" width = "700">
 </p>
 
 ---

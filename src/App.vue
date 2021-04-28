@@ -33,7 +33,7 @@
 					</select>
 				</Rotulo>
 				<Rotulo nome="First complaint?">
-					<Escolha />
+					<Escolha v-model="choice" />
 				</Rotulo>
 				<hr>
 				<button>Send</button>
@@ -66,7 +66,8 @@
 					<span>{{priority}}</span>
 				</Rotulo>
 				<Rotulo nome="First complaint?">
-					<span>???</span>
+					<span v-if="choice == true">Yes</span>
+					<span v-else>No</span>
 				</Rotulo>
 			</div>
 		</div>
@@ -97,9 +98,10 @@ export default {
 				{code: 4, name: 'Medium-high'},
 				{code: 5, name: 'High'}
 			],
-			priority: 'Low'
+			priority: 'Low',
+			choice: true
 		}
-	}
+	},
 }
 </script>
 

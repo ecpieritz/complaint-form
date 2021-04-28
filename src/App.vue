@@ -5,16 +5,16 @@
 			<form class="painel">
 				<div class="cabecalho">Form</div>
 				<Rotulo nome="E-mail">
-					<input type="text" v-model="user.email">
+					<input type="text" v-model.lazy.trim="user.email">
 				</Rotulo>
 				<Rotulo nome="Password">
-					<input type="password" v-model="user.password">
+					<input type="password" v-model.lazy.trim="user.password">
 				</Rotulo>
 				<Rotulo nome="Age">
-					<input type="number" v-model="user.age" min="18" max="115">
+					<input type="number" v-model.number="user.age" min="18" max="115">
 				</Rotulo>
 				<Rotulo nome="Message">
-					<textarea name="" cols="30" rows="5" v-model="message"></textarea>
+					<textarea name="" cols="30" rows="5" v-model.lazy.trim="message"></textarea>
 				</Rotulo>
 				<Rotulo nome="Problem Features">
 					<span class="mr-4"><input type="checkbox" value="reproduzivel"> Reproducible</span>

@@ -17,8 +17,8 @@
 					<textarea name="" cols="30" rows="5" v-model.lazy.trim="message"></textarea>
 				</Rotulo>
 				<Rotulo nome="Problem Features">
-					<span class="mr-4"><input type="checkbox" value="reproduzivel"> Reproducible</span>
-					<span><input type="checkbox" value="intermitente"> Intermittent</span>
+					<span class="mr-4"><input type="checkbox" value="Reproducible" v-model="features"> Reproducible</span>
+					<span><input type="checkbox" value="Intermittent" v-model="features"> Intermittent</span>
 				</Rotulo>
 				<Rotulo nome="Which product?">
 					<span class="mr-4"><input type="radio"> Web</span>
@@ -48,10 +48,14 @@
 					<span>{{user.age}}</span>
 				</Rotulo>
 				<Rotulo nome="Message">
-					<span>{{message}}</span>
+					<span style="white-space: pre;">{{message}}</span>
 				</Rotulo>
 				<Rotulo nome="Check Options">
-					<span>???</span>
+					<span>
+						<ul>
+							<li v-for="f in features" :key="f">{{f}}</li>
+						</ul>
+					</span>
 				</Rotulo>
 				<Rotulo nome="Which product?">
 					<span>???</span>
@@ -81,7 +85,8 @@ export default {
 				password: '',
 				age: 18,
 			},
-			message: ''
+			message: '',
+			features: []
 		}
 	}
 }

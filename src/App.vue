@@ -2,7 +2,7 @@
 	<div id="app">
 		<h1>Register Complaint</h1>
 		<div class="conteudo">
-			<form class="painel">
+			<form class="painel" v-if="!sent">
 				<div class="cabecalho">Form</div>
 				<Rotulo nome="E-mail">
 					<input type="text" v-model.lazy.trim="user.email">
@@ -36,9 +36,9 @@
 					<Escolha v-model="choice" />
 				</Rotulo>
 				<hr>
-				<button>Send</button>
+				<button @click.prevent="send">Send</button>
 			</form>
-			<div class="painel">
+			<div class="painel" v-else>
 				<div class="cabecalho">Result</div>
 				<Rotulo nome="E-mail">
 					<span>{{user.email}}</span>
@@ -81,6 +81,11 @@ import Escolha from './components/Escolha.vue'
 export default {
 	name: 'app',
 	components: { Rotulo, Escolha },
+	methods: {
+		send(){
+			this.sent = true
+		}
+	},
 	data(){
 		return {
 			user: {
@@ -99,7 +104,8 @@ export default {
 				{code: 5, name: 'High'}
 			],
 			priority: 'Low',
-			choice: true
+			choice: true,
+			sent: false
 		}
 	},
 }

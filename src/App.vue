@@ -124,8 +124,11 @@ body {
 	text-align: center;
 	color: #2c3e50;
 
+
 	display: flex;
 	flex-direction: column;
+	width: 50%;
+	margin: auto;
 }
 
 .conteudo {
@@ -167,5 +170,23 @@ body {
 
 .mr-4 {
 	margin-right: 40px;
+}
+
+@media (min-width: 1000px) and (max-width: 1399px) {
+	#app {
+		width: 70%;
+	}
+}
+
+@media (min-width: 700px) and (max-width: 999px) {
+	#app {
+		width: 90%;
+	}
+}
+
+@media (max-width: 699px) {
+	#app {
+		width: 100%;
+	}
 }
 </style>

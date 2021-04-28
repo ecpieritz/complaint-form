@@ -21,9 +21,9 @@
 					<span><input type="checkbox" value="Intermittent" v-model="features"> Intermittent</span>
 				</Rotulo>
 				<Rotulo nome="Which product?">
-					<span class="mr-4"><input type="radio"> Web</span>
-					<span class="mr-4"><input type="radio"> Mobile</span>
-					<span><input type="radio"> Other</span>
+					<span class="mr-4"><input type="radio" v-model="product" value="Web"> Web</span>
+					<span class="mr-4"><input type="radio" v-model="product" value="Mobile"> Mobile</span>
+					<span><input type="radio" v-model="product" value="Other"> Other</span>
 				</Rotulo>
 				<Rotulo nome="Priority">
 					<select name="" id="">
@@ -58,7 +58,7 @@
 					</span>
 				</Rotulo>
 				<Rotulo nome="Which product?">
-					<span>???</span>
+					<span>{{product}}</span>
 				</Rotulo>
 				<Rotulo nome="Priority">
 					<span>???</span>
@@ -86,7 +86,8 @@ export default {
 				age: 18,
 			},
 			message: '',
-			features: []
+			features: [],
+			product: 'Web'
 		}
 	}
 }

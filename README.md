@@ -23,7 +23,7 @@
 
 ## 🚀 How to execute the project
 #### Clone the repository
-git clone https://github.com/EPieritz/complaint-form.git
+git clone https://github.com/ecpieritz/complaint-form.git
 
 #### Enter directory
 `cd complaint-form`

@@ -48,4 +48,4 @@ git clone https://github.com/ecpieritz/complaint-form.git
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ---
-Developed with 💙 by Emilyn C. Pieritz
+<p align = "right">Developed with 💙 by Emilyn C. Pieritz</p>
